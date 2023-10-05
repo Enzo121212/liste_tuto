@@ -1,0 +1,337 @@
+---------------------
+DEFINITION
+-----------------
+1.Definition
+
+- action pour etudier les besoin de consomamateur 
+-adapter la production et l'appareil commeerciale des besoins
+
+2.Question a poser
+.Quels probleme est resolu par le produit
+
+.pour quels consommateurs
+
+.combient sont pret a l'acquerir
+
+.place des concurrents
+
+.quel est le part de ce marche
+
+.a quel cout
+
+3.Plannification
+.Commercialisation
+.Distrubtion
+.Ressources
+.Communication
+
+
+--------------------
+SPECIALISATION
+-------------------
+
+1.Faire une exercie en comparaison
+exemple
+		
+			Bicyclette			Avion
+acheteur	 Particulier		companie
+Decision	 individuelle 		collective
+Achat
+communication 	medias			influence
+
+
+NB: bicyclette est un B2C businnes to consumer(public)
+
+Avion est B2B Business to Businne (particuler, specialisation)
+
+2.type marketing
+
+.M directe
+.M du luxe
+.M sportif
+.M culturel
+.M institutionnel
+.M d'influence
+.M  mobile
+.M du point de vente
+.M digital
+
+-----------------------------------
+M et communication
+------------------------------------
+1.Avant la communication
+.cerner le marche et les cibles
+.identifier la solution 
+.Adapter le produit
+.Motiver les equipes
+.Elaborer un plan strategique
+
+2.Brief(resume)
+.taille de marche
+.Parts a conquerir
+.Propositon de valeur
+.Analyse des cibles
+.Mon,tants investis
+.ROI(retour sur investissement)escompte
+
+-------------------------
+CARRIERE
+-------------------------
+.directeur M(oeuvre avec la direction)
+.Chef de produit M 
+.charge d'etudes M(analyse les concurrence,comportement achat,enquete,entretien,strategie )
+.Data manager (ou data scientist)statistique
+
+2.Digital 
+.E-CRM :gestion de la relation client
+.Responsable web Mon
+.Digital media mangaer
+.Manager SEO
+
+3.Communication
+.commerciaux
+.creatifs
+.directeur artistique
+.designer Graphique
+.illustrateur
+.Maquetiste
+.Trafic manager
+.WebDesigner
+
+------------------------
+ORGANISATION
+------------------------
+
+1.Cest un travail equipe
+.Finances(comptable)
+.Recherche
+.technique et production(developpeur)
+.Commerciaux
+
+2.Planning(mode d(organisation)
+.lundi,mardi,mecredi : on travaille
+.Jeudi : relations(faire des rendez vous)
+.Vendredit:Bilan plannification
+
+3.Brainstorming
+.Viser la quantite non la qualite
+.Reporter le jugement
+.Accueilir les idee farfelues
+.Construire sur les idee
+
+4.Design thinking
+.Brainwriting(ecrire tous les idees indiviuels)
+.Mind mapping(dessiner sur le tableau,cree les liens des idee)
+.Systeme des bulles: 
+.Objections (mettre des defauts sur les idee)
+
+
+---------------------------------
+ANALYSER LES MARCHE
+---------------------------
+1.Niveau de marcher
+.principal (bicyclette electrique)
+.complementaire(casque,batterie,)
+.substiut(trotinete)
+.generique
+
+2.collecte des donne
+.sondage et questionnaires
+.Entretiens indivuel
+.Panels,
+.Clients mystere
+.Etudes d'utilisatbilte
+.test produit
+.veille reseau sociauw
+.statistique de frequentation
+
+3 Donne chiffre
+
+
+-----------------------------------
+ANALYSE CONCURRENTIELLE
+--------------------------------
+1.les matrices(force et faible de nos concurrents)
+.carcterisitique(identite et positionnement, produits, cibles, service,prix, distrubition, force de vente, communication , notoriete et image, Reactivite)
+
+ex MAtrice de SWOT (positif, negatif, force et faiblless, opportunite et menace)
+
+matrice SOAR (force et opportunite, aspiration et resultat)
+
+matrice BCG 
+
+matrice de porter (fournisseur ,clients, substiut, nouveau entrance, concurrenct dires)
+
+PESTELS :facteurs politique Economique Social Technologique Environnmental Legal
+
+Quels sont notre impacte envers la polique sns
+
+
+------------------------
+PRODUITS ET SOLUTION
+------------------------
+1.Lister les problemes pour lequel les clients sont en attentes de solution
+
+Produits : (votre produits ainis leur difference )
+Attentes : problemes rencontre par clients
+Soutions : solution pour les attentes
+
+
+------------------------
+LES PERSONAE
+----------------------
+3 a 4 personnae pas plus
+
+1.Definir les cibles
+	.Qui utilise le produit
+	.pour resoudre quel probleme
+	.Dans quel environnement
+	.Avec quels freins?
+
+2.Personae est un 
+	.personnage imaginaire
+	.represenet la cibles
+	.identite definit
+	.attribus et carcteristique
+	.comportement (sentiemtn)
+	.scenario
+	
+3.Personnaliser le personae
+	.comprendre l approche utilisateur
+	.recueillir des donne utilisateur
+	.concevoir un produit intuitif
+	.optimiser les fonctionnalite
+
+4.objectifs de person
+	.but recherche
+	.nature du probleme a resoudre
+	.points de blocage ou irritants
+	.objection face au produits
+	.facteurs de decision
+
+
+PLUS VOUS CONNAISSEZ VOTRE CIBLE MIEUX VOUR POURREZ REPONDRE A CES ATTENTES
+
+------------------------------
+GOUVERNER C'EST PREVOIR
+----------------------------
+Organiser les veiller
+
+
+-----------------------
+PRIORISER LES CIBLES
+-----------------------
+1.prioriser n'est pas eliminer les autres mais focalisernos effort sur le client priorite
+
+------------
+FRAMEWORK SIMPLE
+--------------
+Pour........... (cible, consommateur)
+Qui........(probleme a resoudre,attent)
+Notre produit est .......(porposition)
+qui permet..........(benefice)
+contrairement à..........(concurent,chose a eviter)
+
+
+-------------------	
+UNIVERS VISUEL
+------------------
+1.Mettre un logo
+2.symbolique de couleurs(acceptable, memorisable,identifiable)
+3.typographique(simple)
+4.images et video (qualite, entoure )
+
+
+-----------------------
+GESTION DES ACTIFS
+------------------------
+.DAM(digital Asset Management) gestion ressource numerique
+
+
+----------
+4P (M mix)
+----------
+Produit, prix, Placement(distribution) , Prommotion
+
+1.Produit(qualite,caracteristique,marque , style, taille,conditionnement, service apres vente,garantie)
+=>Besoin utilisateur
+
+2.Prix(tarif,remise,rabais,condition de paiment)
+=>Facilite d'achat
+
+3.Pacement:(canaux de distribution, pointe de vente, zone de chalandis, stocks et entrepot, assortiment, moyens de transport)
+=>Cout a satisfaire
+
+4.Promotion(publicite,promotion de vente, force de vente, m directe, relation public)
+=>communication 
+
+
+--------------
+FIXER LE PRIW
+--------------
+1.Depense directes et indirecte
+
+2.Montant a payer
+
+3.Valeur ;Ensemble des benefices
+
+
+4.Stratege d'ecremage(prix au dessu de la concurrence,)
+
+5.Strategie de penetration (prix bas, vents massives)
+
+6.Strategie aligne(prix alignes sur la concurrence)
+
+
+
+
+------------
+KPI ROI CLV
+-----
+-------------------------------
+Presenter le plan marketing
+---------------------------
+	-narratif(power pointe)
+1.Objectif a atteindre
+
+2.Le ou les marchecible et la situation concurrentielle
+
+3.Les canaux
+
+4.Le budget
+
+5.Strategie optimale
+
+
+Pro du spitch
+	. 10slides
+	. 20minutes
+	. police en corps 30mn
+	
+	
+----------------
+MEDIA
+--------------
+.site et blog
+.E-mailinget newsletter
+.google my businness
+.Pages sur les reseaux sociaux
+.Chaines Youtube
+.Relation Presse
+
+2.Inclure
+	.Banque d'image et média
+	.Support commerciaux
+	.Livre blanc
+	.Element d identite visuelle a usage
+	.Communique et press kits telechargeables
+
+Selectionner un influenceurs
+
+
+
+
+ 
+
+
+

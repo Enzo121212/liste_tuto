@@ -1,0 +1,128 @@
+------------------------
+ELECTRON + MONGODB REACT
+--------------------------
+
+
+----------------
+INSTALLATION
+---------------	
+npm init
+npm install electron --save-dev
+
+
+npm install electron react react-dom mongodb
+
+main.js : Fichier principal pour le processus principal d'Electron.js.
+index.html : Fichier HTML pour le processus de rendu d'Electron.js.
+main.js : Fichier JavaScript pour votre application React.
+main.css : Fichier CSS pour le style de votre application.
+
+main.js : vous pouvez également établir une connexion à votre base de données MongoDB en utilisant le pilote MongoDB 
+
+execution : electron .
+
+
+
+------------------
+hierarchie
+--------------------
+
+
+
+mon-app-electron/
+├── main.js  (creation fenetre, pointer vers viewx html)
+├── index.html (view generale)
+├── renderer.js (assurer la relation entre react et la view index.hmtl)
+├── package.json
+├── main.css
+├── react-app/
+│   ├── App.js
+│   ├── index.js
+│   ├── components/
+│   │   └── Hello.js
+
+Fonctionnalite possible pour vente en ligne
+	- Presentation produit par categorie
+	- Creation panier
+	- Paiement(mvola , a la livraison)
+	- Livraison
+	- Back office
+			- tableau de bord(chiffre d affaire)
+			- ajout produit
+			- Listes des clients 
+			- Listes produits vendu
+
+------------------------------------------
+electron.js
+-----------------------------------------
+const electron = require('electron');
+const ipcMain = electron.ipcMain;
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+
+const path = require('path');
+const url = require('url');
+const isDev = require('electron-is-dev');
+
+let mainWindow;
+let imageWindow;
+let settingsWindow;
+
+function createWindow() {
+  mainWindow = new BrowserWindow({width: 900, height: 680, webPreferences: { webSecurity: false}});
+  imageWindow = new BrowserWindow({width: 600, height: 600, parent: mainWindow, show: false});
+  settingsWindow = new BrowserWindow({width: 600, height: 600, parent: mainWindow, show: false});
+
+  mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);
+  imageWindow.loadURL(isDev ? 'http://localhost:3000/image' : `file://${path.join(__dirname, '../build/index.html')}`);
+  settingsWindow.loadURL(isDev ? 'http://localhost:3000/settings' : `file://${path.join(__dirname, '../build/index.html')}`);
+
+
+  mainWindow.on('closed', () => mainWindow = null);
+
+  imageWindow.on('close', (e) => {
+    e.preventDefault();
+    imageWindow.hide();
+  });
+
+  settingsWindow.on('close', (e) => {
+    e.preventDefault();
+    settingsWindow.hide();
+  });
+}
+
+app.on('ready', createWindow);
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
+
+app.on('activate', () => {
+  if (mainWindow === null) {
+    createWindow();
+  }
+});
+
+ipcMain.on('toggle-image', (event, arg) => {
+  imageWindow.show();
+  imageWindow.webContents.send('image', arg);
+})
+
+
+ipcMain.on('toggle-settings', () => {
+  settingsWindow.isVisible() ? settingsWindow.hide() : settingsWindow.show();
+})
+
+
+
+-------------------------------------
+package.json
+---------------------------------
+
+    "go": "concurrently \"npm run start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "main": "public/main.js",
+
+

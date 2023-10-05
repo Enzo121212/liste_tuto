@@ -1,0 +1,99 @@
+MARKETING DIGITAL
+
+-Presence permanence en reseau sociale
+-produire des produits visuels(image et video)
+-SEO
+-interaction avec les utilisateurs
+
+-------------
+OUTILS
+-----------
+-Page fb (creator studio facebook)
+-Hootsuite (gerer publication sur les reseau sociale) Payant
+-Buffer similaire a hottsuite mais focus sur la calendrier mais il est en anglais 
+
+
+---------------------
+REDACTION 
+----------------------
+
+combiendemots.com 
+	->savoir les nombre des mots
+	->compteur de mots en ligne
+
+crisco2.unicaen.fr/des 
+	-> des synonuymes des mot
+
+	
+	
+----------------------
+BANQUE D'IMAGE
+----------------------
+-faut pas utiliser les perssonnages (sauf personne inocnnaissable) et le marque de personne
+
+1-unsplash.com
+2-pexels.com
+3-pixabay.com
+
+
+-------------------------
+ORAGANISATION des projets
+------------------------
+1-trello
+2.asana
+3-Beesbusy
+
+
+
+-------------------
+CANVA
+----------------------
+
+->canva.com
+
+-Pkus rapide que photoshop et illustrator
+
+-similaire a canva , c'est express.adobe.com
+
+
+
+-------------------------------
+PUBLICATION VIDEO
+*---------------------
+-ScreenFlow(payant)
+-Camtasia (payant)
+-studio.youtube.com (montage en ligne)
+-Vidiq.com (extension youtube)
+-tubeBuddy.com(extension  youtube)
+
+
+-----------------------------
+SEO
+---------------------------
+
+- pagespeed.web.dev (analyse de page)
+
+-search.google.com/test/mobile-friendly (tester si votre site est adapter au mobile)
+
+-ads.google.com (evaluez les mots cles)
+
+-app.neilpatel.com/fr/dashboard (idee mots cles)
+
+-Yoast SEO (extension pour wordPress)
+
+
+
+---------------------
+E-MAILING
+--------------------
+
+1. mailchimp.com (2 000 contact et 10 000 envoie par mois pour gratuit , il est en anglasi)
+-les sites similaires sont fr.sendinblue.com , fr.mailjet.com , fr.mailpro.com
+
+2.creation forumulaire en ligne,  en docs.google.com/forms ou typeform.com
+
+3.eventbrite.fr (creation evenement fete ou ceremeonie en ligne)
+
+4.fr.surveymonkey.com (creation sondage)
+
+5.botnation.ai/fr (creation chat bo)
