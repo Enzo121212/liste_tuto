@@ -1,0 +1,16 @@
+1.telecharger un extension udemy downloader
+
+2.installer dans chrome
+    - dezipper le fichier
+    - aller dans l'extenstion(chrome)
+    - mettre en mode developpeur
+    - cliquer sur charger l'extension non empaquetee
+    - puis choisir le dossier ou il y a udemy downloader 
+
+3.aller dans udemy et connecter
+
+4.Cliquer mon apprentissage
+
+5.Cliquer sur udemy downloader puis telecharger
+
+6.les videos seront dans telechargment/cours udemy

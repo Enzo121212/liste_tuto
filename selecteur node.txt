@@ -1,0 +1,15 @@
+installation nvm 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+installation version node
+nvm install 14
+
+utilisation node 14
+nvm use 14
+
+mettre par defaut 14
+nvm alias default 14
+
+
+verification 
+node -v

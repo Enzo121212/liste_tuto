@@ -1,2 +1,5 @@
 les cours gratuits en udemy 
 http://www.discudemy.com/all/499
+
+creation json fake
+https://jsonplaceholder.typicode.com/
