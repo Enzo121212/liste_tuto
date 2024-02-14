@@ -1,0 +1,32 @@
+
+docker run -p 80:80 => installer et demmarer un dokcker httpd
+docker ps  => liste des docker actif
+docker ps -a => liste des docker actif et non actif
+docker --version => la version docker
+docker stop id =>stoppe le docker
+docker start id =>demarre le docker
+docker rm id => supprime le docker
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+creation fichier MAPPING: D:\docker
+
+docker run -p 80:80 -v D:\docker:/usr/local/apache2/htdocs/
+
+
+
+---------------------------------------
+PS
+
+cd /D D:\docker =>aller directement vers un dossier
+
+echo "j'ecris dans index.html" > index.html  =>creation et ecriture
+
+more index.html => ouvrir
+
+
+
+-----------------------------------
+docker-compose => demree toutes les container
+
+
+
