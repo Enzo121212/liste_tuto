@@ -1,0 +1,57 @@
+
+
+___________INSTALLATION__________________
+git clone https://github.com/nestjs/typescript-starter.git project
+cd project
+npm install
+npm run start
+
+ou 
+
+npm i -g @nestjs/cli
+nest new project-name
+npm run start
+
+
+______________ARCHITECTURE___________________________
+
+point de demarage (main.ts)
+main.ts appelle app.module qui appelle les services(app.servcice.ts) et les controller(app.controller.ts)
+les app.controller.spec sont des fichier pour les test unitaires
+le service est un peu comme le model dans le php (injection de dependance)
+
+le fichier nest-cli.json sert a changer le chemin de source du projet
+
+_____________ORM_____________
+1. npm i -D prisma
+
+2.npx prisma = "voir toutes les manuels du prisma"
+npx prisma init ="initialise un projet prisma" il ya un fichier dans prisma/shema.prisma
+
+3.Dans la .env 
+DATABASE_URL ="mysql://root:password@localhost:3306/nom_base"
+
+4.Ecrire dans le schema _prisma toutes les models pour base de donne
+npx migrate dev : pour migrer dans la table en mysql 
+npx prisma studio pour regarder le general de model
+
+ex :
+model Camions {
+  id              Int      @id @default(autoincrement())
+  immatriculation String   @db.VarChar(50)
+  marque          String   @db.VarChar(50)
+  capacite        Int
+  disponibilite   Bytes     @unique
+  createdAt       DateTime @default(now())
+  updateAt        DateTime @updatedAt
+}
+
+
+
+_____________AUTH_____________
+1.ABRECIATION
+	nest g mo auth  //creation module
+	nest q co  auth --no-spec  // creation services sans le fichier spec
+	nest g co  auth --no-spec  // creation controller sans le fichier spec
+	
+

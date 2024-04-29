@@ -58,3 +58,264 @@ rafce : c'est le raccourcie pour genere le code
 
 exemple , mettre app/contact/page.js dans le route /contact
 				 app/CV/page.js dans la route /cv
+				 
+eslint : pour corriger les les fautes
+
+
+
+____________ROUTING_____________
+/ => app/pâge.tsx
+/about =>app/about/page.tsx
+/blog/firstblog => app/blog/firstblog/page.tsx
+
+1.--------route dynamique representer dans crochet
+/produit/:id => produit/[id]/page.tsx
+
+pour recuper mettre un objet params 
+params.id
+
+ex: export default function productDetail( {params}){
+return ( <span> params.id  <span/>)
+}
+
+pour tsx 
+ export default function productDetail( {params , }:{ params :{params.id : string}){
+return ( <span> params.id  <span/>)
+}
+
+/produit/:id/review/:idreview => produit/[id]/review/[reviewId]/page.tsx
+pour tsx 
+ export default function productDetail( {params , }:{ params :{params.id : string ,reviewId :string}){
+return ( <span> {params.id} {params.reviewId}   <span/>)
+}
+
+NB: ca ne fait rien meme si le dossier review n'a pas de fichier page.tsx
+
+
+----------slug
+recuperer les rout apres [...slug] 
+comme lien "/product/tomate/oignon" si on recupere tomate et oignon
+/product/tomate/oignon => aop/product/[..slug]
+
+
+ export default function productDetail( {params , }:{ params :{slug: string[] ,}){
+return ( <span> {params.slug[0]} {params..slug[0]}   <span/>)
+
+}
+
+slug est un tableau
+
+
+----------notfound
+-par creation not-found.tsx  si globale dans app/not-found.tsx
+
+-si on specialise un notfound par exemple un produit superieur a 1000 c a d un lien /product/100000
+alors creer un dossier et fichier et modifier app/product/not-found.tsx 
+
+import {notFound} from "next/navigation"
+
+if(params.id > 1000) { notFound()}
+
+
+----------------un trait bas pour un route prive
+creation dossier app/_lib/page.tsx => ceci n'est pas visible dans lien /_lib car il y a un trait bas
+
+
+----------Group route mettre entre parenthese
+on peut on envelopper 3 route 
+exemple: register et login ,forgot_password peut etre dans le dossier auth
+app/(auth)/register  => lien = /register
+app/(auth)/login => lien = /register
+app/(auth)/forgot=> lien = /register
+
+s'il n'y a pas de parenthese il y a un erreur sauf si le lient = auth/login
+
+
+
+_____________LAYOUTS________________
+Dans le app/layout.tsx represente toutes les corps 
+
+comme 
+<html> 
+	<body>{children} </body/
+</html>
+
+le children affiche app/page.tsx
+
+le layout.tsx peut etre embrique comme app/product/layout.tsx
+
+
+_______________METADONNE8___________________
+
+---statique---
+
+dans la app/product/page.jsx
+
+mettre 
+export const metadata={
+	title="Produit"
+};
+
+ou
+Dans app/layout.tsx
+import {Metadata} from "next"
+export const metadata: Metadata={
+	title:{
+		default :"tutoriel nextjs",
+		template : " %s | tuto"     // suffice ou prefixe
+	}
+}
+
+Dans app/product/page.tsx
+import {Metadata} from "next"
+export const metadata: Metadata={
+	title:product , // affiche product | tuto
+}
+
+si vous ne preferiez pas le suffixe ou le prefixe change le title en 
+	title:{
+		absolute:'product'
+	}
+
+Cela changera le title de la page header en produit
+
+
+____________LINK__________________
+
+1. import Link from "next/Link"
+
+<span> <link href="product" </span>
+
+span> <link href="product" replace</span> avec replace si jamais j'appuie sur le retour dans le navigateur
+cela redirige vers lien '/' mais non pas la page precedents
+
+2.tester si les menu isActive
+
+mettre use client au debut dans layout.tsx pour utiliser les hooks comme use path
+
+
+"use client"
+import Link from "next/Link"
+import  { usePathname} from "next/navigation"
+
+const navLinks =[
+	{name :'register", href:"/register ,}
+	...
+]
+
+{
+	navLinks.map((link)=>{
+		const isActive = pathname.startsWidth(link.href);
+		return (
+			<Link href={link.href} key={link.name} className={isActive ? "red" ; "blue"}> link.name</Link>
+		)
+	})
+}
+
+
+3.redirection par un boutton
+
+import {userrouter} from "next/navigation"
+
+const router = userRouter();
+const handleClick =()=>{
+	router.push(/product); vers product
+	router.forward(): vers la page suivante
+	router.replace() : versa le lien "/"
+	router.back() : vers la page precedente
+}
+
+4.template.tsx
+si dans un layout.tsx tu met un input avec les donnée
+mais quand tu change un route ou un page, le donne ou l'etat ne change pas 
+Donc si tu veux que l'etat change a chaque changement de page alors remplace layout.tsx par template.tsx
+
+
+5.Loading.tsx
+commme page.tsx, il retourne un text ou un spinner ou un image pour attendre la chargement
+
+
+6.error.tsx
+
+Dans le error.tsx
+	"use client"
+	export default function ErrorBoundary({eroor}:{error:Error}){
+		return <div> {error.message}</div}
+	}
+	
+Dans la page.tsx
+if(faut =="){
+	trow new Error("Error loading")
+}
+
+Icic on gere l'erreur, s'il y a un erreur alors un petit message s'affiche
+sans detruire les autres
+NB: fait un npm run build et npm run dev pour le rafraichir
+
+
+______________PARALLE ROUTE________
+dans un layout.tsx on peut mettre 3 routes differents en mettant @
+
+app/dashboard/@sidebar/page.tsx
+app/dasborad/@header/page.tsx
+app/dasborad/@footer/page.tsx
+
+Dans le app/dasborad/layout.tsx nous pouvons mettre qu un seule url 
+avec /dahsboard ; il met 404 not found si vous metter /dahsboard/sidebar ou 
+dashboard/@sidebar
+
+export default function DasboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+  header: React.ReactNode;
+  sidebar: React.ReactNode;
+  footer: React.ReactNode;
+}) {
+  return (
+    <div> 
+		{children}
+		{sidebar}
+		{header}
+		{footer}
+	</div>
+  );
+}
+
+2.Mettre default.tsx et copie dans les page.tsx 
+si vous creez un  app/dashboard/@sidebar/lier/page.tsx qui est accessible par dashboard/lier/page
+
+3.pour intecepter rout utiliser 
+(.) meme segment
+ ou 
+ (..) segment above level ou 
+ (..)(..) 2 segment
+ (...) vers app/
+ genre popup ou modal mais quand on reload on vient a l'original
+ si je cree app/f1/f2/page.tsx et app/f1/(.)f2/page.tsx
+ 
+ Dans f1 quand je vai dans f1/f2 le page.tsx dans (.)f2 sera affiche mais quand je reload le f2/page.tsx sera affiche
+ ___________
+ 
+ 
+ 
+ 
+ ______________________ROUTE______________________
+ 
+ Quand on met app/profile/route.tsx 
+ Dans le route je veux avoir 
+ 
+ export async function GET(){
+ return new Response("Route aPi")
+ }
+ 
+ Quand je navigue dans /profile cela affiche Route APi
+ 
+ Quand je cree un app/profile/page.tsx  en ecrivant "je suis dans pagetsx"
+ cela affiche encore Route api
+ 
+ Donc mettre app/profile/api/route.tsx et cela affiche je suis dans pagetsx
+
+
+--------middleware sera a rediriger si tu tape / on peut le diriger ve /login grace middleware
+alors il sera a reecrutue, rediriger, gerer les entetes et les coocies
