@@ -52,6 +52,6 @@ _____________AUTH_____________
 1.ABRECIATION
 	nest g mo auth  //creation module
 	nest q co  auth --no-spec  // creation services sans le fichier spec
-	nest g co  auth --no-spec  // creation controller sans le fichier spec
+	nest g s  auth --no-spec  // creation controller sans le fichier spec
 	
 

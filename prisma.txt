@@ -1,12 +1,12 @@
-npm install prisma --save-dev
+1.npm install prisma --save-dev
 
 
-npx prisma init
+2.npx prisma init
 
 
-npm install @prisma/client
+3.npm install @prisma/client (connextion entre bd et prisma)
 
-dans shcema.prisma
+dans schema.prisma
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
@@ -16,7 +16,29 @@ dans .env
 mysql://USER:PASSWORD@HOST:PORT/DATABASE
 exemple:DATABASE_URL="mysql://root:@localhost/test"
 
-
+4.migration, mettre les requete dans le shema.prisma
 npx prisma migrate dev --name init
 
+5.voir graphiqe
 npx prisma studio (design prisma)
+
+
+
+--------------AUHTNETIFICATIO?N---------------------
+1.
+Faire une validation 
+npm i --save class-validator class-transformer
+pour valider aller dans le main.ts et ajouter juste en app.liste
+app.useGlobalPipes(new ValidationPipe());
+
+2.
+Relation bd et prisma
+npm i --save @nestjs/config
+in app.module, 
+import {ConfigModule} from '@nestjs/config'
+ConfigModule.forRoot({isGlobal:true}), 
+
+3.
+mettre le prismaService dans mon auth
+a.mettre le module en @Global()
+b.faire un export exports:[prismaService]

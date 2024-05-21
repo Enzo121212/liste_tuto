@@ -319,3 +319,41 @@ si vous creez un  app/dashboard/@sidebar/lier/page.tsx qui est accessible par da
 
 --------middleware sera a rediriger si tu tape / on peut le diriger ve /login grace middleware
 alors il sera a reecrutue, rediriger, gerer les entetes et les coocies
+
+
+
+
+--------------------------------------------------
+Pour faire un bcrypt 
+
+npm i bcrypt
+npm i -D @types/bcrypt
+
+pour crypter     const hash = await bcrypt.hash(password, 10);
+pour comparer    const match = await bcrypt.compare(password,  user.password ) 
+
+
+----------------------------------------------------
+importer les jwt 
+
+npm install --save @nestjs/jwt passport-jwt
+npm install --save-dev @types/passport-jwt
+
+Renvoier un token
+    const payload = {
+      sub : user.id,
+      email : user.email
+    }
+
+    const token = this.jwtService.sign(payload, {
+      expiresIn : "2h", 
+      secret: this.configService.get('SECRET_KEY')
+    })
+
+
+-----------------------------------
+Swagger (pour la visualisation des api)
+
+npm install --save @nestjs/swagger
+
+
