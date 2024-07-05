@@ -1,0 +1,204 @@
+
+-------DOWNLOAD------------
+Telecharger dans le site officielle https://www.jenkins.io/
+Telecharger un jdk 21 
+
+-------INSTALLATION-------
+1.faire tourner dansa la port 9000 ou autres
+2.faite suivant et mettre le chemin de jdk : C:\Program Files\Java\jdk-21
+3.Tourner dans url localhost:9000
+4.Mettre un initial password dans C:\ProgramData\Jenkins\.jenkins\secrets\ avec le fichier initialAdminPassword
+5.Installer les plugin de suggestion
+6.mettre a nouveau les mots de passe et user
+	mdp: adminjenkins2024
+	mail :enzoanjaratiana@gmail.com
+	Nom complet : Enzo Anjaratiana
+	Nom utilisateur :Enzo
+	url :http://localhost:9000/
+	
+	
+-------CREATION ITEMS----------
+Nouveau Item > saisisez le nom sans espace > choisir votre choix > sauvegarder
+
+
+--------TRIGGER-----------
+c'est a dire quand on lance un job, le deusieme se fait automatiquement,
+1.allez dans la configurer de la deusieme job
+2.allezCe qui déclenche le build
+3.ALlez "Construire après le build sur d'autres projets" puis ecrire le nom du premier job
+4.Sauvegardez
+
+NB: celle ci ne demarre que le premier presente aucun erreur
+
+------ Remote url------------------------
+LAncement VIA URL (a distance)
+1.allez dans la configurer de la deusieme job
+2.Allez "Ce qui déclenche le build"
+3.Allez "Déclencher les builds à distance "
+4.Mettre un token "jeton d'authentification" (exemple = 1234)
+5.Le lien de lancement de la jeton sera http://localhost:9000/job/DeusiemeJob/build?token=1234 
+
+
+---------TACHE CRON-----------
+1.allez dans la configurer de la deusieme job
+2.Allez "Ce qui déclenche le build"
+3.Construire periodiquement
+*****
+Minute hour dom month dow
+minute : (0-59)
+hour   : (0-23)
+dom    : le jour du mois(1-31)
+month  : (1-12)
+dow     :(1-7) lundi mardi...
+
+***** :tous les minutes
+H/15 **** : tous les 15 minutes
+00 13 * * 1 :tous les lundits a 134
+
+
+
+----------BUILD AVEC PARAMETRE-------
+On peut mettre des mots de pass avant le buil,
+mot de pass ou string, ou cache a cocher, upload un fichier..
+
+1.allez dans la configurer
+2.Allez "Ce build a des parametres"
+3.Choisir votre choix et sauvegarder
+4.Pour executer allez = "Lancer un build avec des parametres"
+
+tmp/fichier.tx 
+
+mkdir -p tmp/
+cat tmp/fichier.txt
+
+mkdir tmp
+type tmp\fichier.txt
+
+
+-------GIt-------------
+1.allez dans la configurer
+2.General > Gestion de code source
+3.Allez git et copy url git
+4.sauvegarder 
+
+---------Git trigger -----------
+Il ne build que sauf il y a un changement dans le git
+Buil automatique lorsqu'il y a un changement
+
+1.Allez nouveau item
+2.SAisir le nom
+3.Allez "copiez depuis" copier le job que vous allez inspecter
+4.Allez "configurer"
+5.Allez "Scrutation de l'outil de gestion de version "
+6.mettez **** pour qu'il se charge toutes les minutes 
+7.Sauvegarder
+
+
+---------VUE-------------
+Pour bien organiser les vues de build
+
+1.Cliquer sur le boutton "+"
+2.Filtrer a ton besoin 
+3.on peu meme filtrer par l'apparition des mots
+	a.allez dans "Utilisez une expression régulière pour inclure les jobs dans la vue"
+	b.puis ecrirer les mots : exemeple  '.*Git.*'
+4.Ok
+5.Pour editer:
+	a.cliquer sur le vue
+	b.cliquer sur editer cette vue (cote droite de la vuye)
+	
+	
+---------PIPELINE DELIVERY-----------
+Dans un build , il se peut qu'il depend d'autre build
+exemple: build - run  - test
+
+le build run depend de build e
+le test depend de run 
+
+Pour pouvoir ca en bonne qualite il nous faut un pipeline 
+
+1.Allez "Admnistre Jenkins"
+2.allez " plugin"
+3.Allez "plugins disponible"
+4.Tapez delivery 
+5.Installez delivery pepilene
+6.Installez le PIPELINE DELIVERY plugin 
+
+7.Allez dans la vue et cliquez sur "+"
+8.Mettre le nome de la vue et Allez dans "delivery pipeline View" 
+
+
+---------------CREATION PEPLINE---------
+1.Allez nouveau item
+2.SAisir le nom
+3.Allez dans le "pipline"
+4.Script exemple:
+
+pipeline {
+    agent any
+    stages {
+        stage('clone') {
+            steps {
+                bat 'del /Q *.*'
+                bat 'for /D %%p in (*) do rmdir "%%p" /S /Q'
+                bat 'git clone https://github.com/Enzo121212/jenkinsTest.git'
+            }
+        }
+        
+        stage('build') {
+            steps {
+                bat "echo 'build' "
+                 bat 'cd jenkinsTest && javac Main.java'
+            }
+        }
+        
+        stage('run') {
+            steps {
+                bat "echo 'RUN' "
+                bat 'cd jenkinsTest && java Main'
+            }
+        }
+    }
+}
+
+NB :  les commandes sh que vous utilisez dans votre pipeline sont destinées à un environnement 
+Unix/Linux, mais Jenkins est exécuté sur un environnement Windows. 
+Pour exécuter des commandes sur Windows, vous devez utiliser des commandes 
+Windows (bat au lieu de sh). 
+
+(Deusieme pipeline)
+Pour generer un syntax  cliquer sur "Pipeline syntax"
+
+node {
+    stage('Build and run') {
+        git branch: 'main', url: 'https://github.com/Enzo121212/jenkinsTest.git'
+        bat '''
+            javac Main.java
+            java Main
+        '''
+    }
+}
+
+-------------------JENKINSFILE--------------------
+Le script sera dans jenkinsfile mais pas dans le jenkins
+
+1.creer un fichier Jenkinsfile
+2.mettre dedans le script
+
+node {
+	stage('clone'){
+		git branch: 'main', url: 'https://github.com/Enzo121212/jenkinsTest.git'
+	}
+	stage('build'){
+		bat "javac Main.java"
+	}
+	stage('run'){
+		bat "java Main"
+	}	
+}
+3.commit et push 
+4.Allez nouveau item
+5.SAisir le nom
+6.Allez dans le "pipeline from SCM"
+7.mettre SCM en git et remplir
+
